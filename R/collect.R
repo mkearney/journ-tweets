@@ -90,6 +90,8 @@ oreplies <- otml %>%
 ## update full data set
 d <- bind_rows(d, otml, oreplies)
 
+## only unique rows
+d <- funique::funique(d)
+
 ## resave
-nrow(unique(d))
 saveRDS(d, save_as)
